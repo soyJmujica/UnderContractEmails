@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+<form method="POST">
+        {% csrf_token %}
+        <br>
+        {% for field in form %}
+            {% if field.name != 'category'  %}
+                {{ field.label_tag }} {{ field }}
+                <br>
+                {% if field.errors %}
+                    <ul class="errorlist">
+                        <br>
+                    </ul>
+                {% endif %}
+            {% else %}
+                {{ field }}
+            {% endif %}
+        {% endfor %}
+        <button  type="submit">Save</button>
+  </form>
+{% endblock %}

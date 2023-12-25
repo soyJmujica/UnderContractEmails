@@ -1,0 +1,39 @@
+{% load static %}
+<nav class="navbar navbar-expand">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img src="{% static 'img/logoculo.png' %}" width="7%" alt="logo culo">
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      {% if request.path == "/undercontract/transactions/<int:property_id>/" %}
+      <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'home' %}">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'transacciones' %}">Transactions</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'detalles' property.id %}">{{property.address}}</a>
+      </li>
+      </ul>
+      {% else %}
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'under contract'%}">Buyer UC</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'transacciones' %}">Transsactions</a>
+        </li>
+
+      </ul>
+      {% endif %}
+    </div>
+  </div>
+</nav>

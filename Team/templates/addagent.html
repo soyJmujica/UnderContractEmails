@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!--figure><img src="{% static 'img/logoculo.png' %}"></figure-->
+<form action="{% url 'agregar' %}" method="POST">
+	{% csrf_token%}
+	<br>
+	{{form.as_p}}
+
+	<button class="btn btn-success">Add Agent</button>
+</form>
+{% endblock %}

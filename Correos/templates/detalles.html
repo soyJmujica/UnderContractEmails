@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1 class="display-4 text-center">{{property.address}}</h1>
+<p>
+	<h2>Buyer: {{property.buyer_firstname}} {{property.buyer_lastname}}</h2>
+	<h2>Buyer Info: {{property.buyer_email}} {{property.buyer_phone}}</h2>
+	<h2>Title company: {{property.titlecompany}}</h2>
+	<h2>Title Info: {{property.titlecompany_email}} {{property.titlecompany_phone}}</h2>
+	<h2>Purchase price: {{property.price}} Escrow: {{property.escrow_amount}}</h2>
+	<h2>Efective date: {{property.efective}}  Escrow Date: {{property.escrow_date}}</h2>
+	<h2>Inspection Team: {{property.inspectionteam}}</h2>
+	<h2>Inspection team info: {{property.inspectionteam_email}} {{property.inspectionteam_phone}}</h2>
+	<h2>Inspection Due Date: {{property.inspection_date}}</h2>
+</p>
+{% if property.status == "Pending" %}
+<form action="{% url '7 correos' property.id %}" method="POST">
+	{% csrf_token %}
+	
+	<button class="btn btn-primary" type="button submit">
+	Generar
+	</button>
+</form>
+{% else %}
+<form action="{% url 'cerrado' property.id %}">
+	{% csrf_token %}
+	<button class="btn btn-primary" type="button submit">
+	Generar
+	</button>
+</form>
+{% endif %}
+
+
+{% endblock %}
+
+

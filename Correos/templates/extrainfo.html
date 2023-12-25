@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<form method="POST" id="extrainfo-form">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+$(document).ready(function() {
+  // Hide the conditional fields initially
+  $('#id_agent, #id_lender, #id_lender_nmls, #id_company_nmls').hide();
+
+  // Show/hide fields based on the selected option
+  $('#id_category').change(function() {
+    var selectedOption = $(this).val();
+
+    if (selectedOption === 'Insurance' || selectedOption === 'Realtor') {
+      $('#id_agent').show();
+      $('#id_lender, #id_lender_nmls, #id_company_nmls').hide();
+    } else if (selectedOption === 'Lender') {
+      $('#id_agent').hide();
+      $('#id_lender, #id_lender_nmls, #id_company_nmls').show();
+    } else {
+      $('#id_agent, #id_lender, #id_lender_nmls, #id_company_nmls').hide();
+    }
+  });
+});
+</script>
+{% endblock %}

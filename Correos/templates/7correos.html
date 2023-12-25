@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Emails of {{encabezado}}</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css'%}">
+</head>
+<body>
+
+    <!--button onclick="guardarPDF()">Guardar como PDF</button-->
+    <div class="container">
+    {% include 'navbar2.html' %}
+        <div class="container-slides">
+            {% if property.financing == 'Cash' %}
+                {% if property.insurance %}
+                <ul class="slides">
+                <li class="slide active brand1">
+                    <a href="#" class="action"><span>Congratulations</span></a>
+                    <div class="slide-content" id="div1">
+                        <h2>{{property.address}}</h2>
+                        <!--<img src="{% static 'img/ocma9h6nmo3c1.webp' %}">-->
+                        {% include 'congratulations.html' %}
+                    </div>
+                </li>
+                <li class="slide brand2">
+                    <a href="#" class="action"><span>TC Email</span></a>
+                    <div class="slide-content" id="div2">
+                        <h2>{{property.address}}</h2>
+                        <p>
+                        {% include 'TCemail.html' %}
+                        </p>
+                    </div>
+                </li>
+
+                <li class="slide brand4">
+                    <a href="#" class="action"><span>Email to title</span></a>
+                    <div class="slide-content" id="div4">
+                        <h2>{{property.address}}</h2>
+                        <p>
+                        {% include 'Title email buyer.html' %}.
+                        </p>
+                    </div>
+                </li>
+                <li class="slide brand5">
+                    <a href="#" class="action"><span>Email to Harbor insurance</span></a>
+                    <div class="slide-content" id="div5">
+                        <h2>{{property.address}}</h2>
+                        <p>
+                        {% include 'Harbor email.html' %}
+                        </p>
+                    </div>
+                </li>
+                <li class="slide brand6">
+                    <a href="#" class="action"><span>LPT email</span></a>
+                    <div class="slide-content" id="div6">
+                        <h2>{{property.address}}</h2>
+                        <p>
+                        {% include 'LPT email.html' %}
+                        </p>
+                    </div>
+                </li>
+                <li class="slide brand7">
+                    <a href="#" class="action"><span>Email introduction to the Listing Agent</span></a>
+                    <div class="slide-content" id="div7">
+                        <h2>{{property.address}}</h2>
+                        <p>
+                        {% include 'Introduction email.html' %}
+                        </p>
+                    </div>
+                </li>
+                {% if property.thereis_HOA %}
+                <li class="slide brand8">
+                    <a href="#" class="action"><span>Email to buyer regarding HOA</span></a>
+                    <div class="slide-content" id="div8">
+                        <h2>{{property.address}}</h2>
+                        <p>
+                        {% include 'BuyerHOA.html' %}
+                        </p>
+                    </div>
+                </li>
+                {% endif %}
+                <li class="slide brand9">
+                    <a href="#" class="action"><span>Email to the inspection team</span></a>
+                    <div class="slide-content" id="div9">
+                        <h2>{{property.address}}</h2>
+                        <p>
+                        {% include 'Inspection email buyer.html' %}
+                        </p>
+                    </div>
+                </li>
+
+                {% else %}
+                <ul class="slides">
+                <li class="slide active brand1">
+                    <a href="#" class="action"><span>Congratulations</span></a>
+                    <div class="slide-content" id="div1">
+                        <h2>{{property.address}}</h2>
+                        <!--<img src="{% static 'img/ocma9h6nmo3c1.webp' %}">-->
+                        {% include 'congratulations.html' %}
+                    </div>
+                </li>
+                <li class="slide brand2">
+                    <a href="#" class="action"><span>TC Email</span></a>
+                    <div class="slide-content" id="div2">
+                        <h2>{{property.address}}</h2>
+                        <p>
+                        {% include 'TCemail.html' %}
+                        </p>
+                    </div>
+                </li>
+               
+                <li class="slide brand4">
+                    <a href="#" class="action"><span>Email to title</span></a>
+                    <div class="slide-content" id="div4">
+                        <h2>{{property.address}}</h2>
+                        <p>
+                        {% include 'Title email buyer.html' %}.
+                        </p>
+                    </div>
+                </li>
+                
+                <li class="slide brand6">
+                    <a href="#" class="action"><span>LPT email</span></a>
+                    <div class="slide-content" id="div6">
+                        <h2>{{property.address}}</h2>
+                        <p>
+                        {% include 'LPT email.html' %}
+                        </p>
+                    </div>
+                </li>
+                <li class="slide brand7">
+                    <a href="#" class="action"><span>Email introduction to the Listing Agent</span></a>
+                    <div class="slide-content" id="div7">
+                        <h2>{{property.address}}</h2>
+                        <p>
+                        {% include 'Introduction email.html' %}
+                        </p>
+                    </div>
+                </li>
+                {% if property.thereis_HOA %}
+                <li class="slide brand8">
+                    <a href="#" class="action"><span>Email to buyer regarding HOA</span></a>
+                    <div class="slide-content" id="div8">
+                        <h2>{{property.address}}</h2>
+                        <p>
+                        {% include 'BuyerHOA.html' %}
+                        </p>
+                    </div>
+                </li>
+                {% endif %}
+                <li class="slide brand9">
+                    <a href="#" class="action"><span>Email to the inspection team</span></a>
+                    <div class="slide-content" id="div9">
+                        <h2>{{property.address}}</h2>
+                        <p>
+                        {% include 'Inspection email buyer.html' %}
+                        </p>
+                    </div>
+                </li>
+
+            </ul>
+
+                {% endif %}
+            {% else %}
+                {% if property.insurance %}
+                <ul class="slides">
+                <li class="slide active brand1">
+                    <a href="#" class="action"><span>Congratulations</span></a>
+                    <div class="slide-content" id="div1">
+                        <h2>{{property.address}}</h2>
+                        <!--<img src="{% static 'img/ocma9h6nmo3c1.webp' %}">-->
+                        {% include 'congratulations.html' %}
+                    </div>
+                </li>
+                <li class="slide brand2">
+                    <a href="#" class="action"><span>TC E mail</span></a>
+                    <div class="slide-content" id="div2">
+                        <h2>{{property.address}}</h2>
+                        <p>
+                        {% include 'TCemail.html' %}
+                        </p>
+                    </div>
+                </li>
+                <li class="slide brand3">
+                    <a href="#" class="action"><span>Email to lender </span></a>
+                    <div class="slide-content" id="div3">
+                        <h2>{{property.address}}</h2>
+                        <p>
+                        {% include 'Lender email.html' %}
+                        </p>
+                    </div>
+                </li>
+                <li class="slide brand4">
+                    <a href="#" class="action"><span>Email to title</span></a>
+                    <div class="slide-content" id="div4">
+                        <h2>{{property.address}}</h2>
+                        <p>
+                        {% include 'Title email buyer.html' %}.
+                        </p>
+                    </div>
+                </li>
+                <li class="slide brand5">
+                    <a href="#" class="action"><span>Email to Harbor insurance</span></a>
+                    <div class="slide-content" id="div5">
+                        <h2>{{property.address}}</h2>
+                        <p>
+                        {% include 'Harbor email.html' %}
+                        </p>
+                    </div>
+                </li>
+                <li class="slide brand6">
+                    <a href="#" class="action"><span>LPT email</span></a>
+                    <div class="slide-content" id="div6">
+                        <h2>{{property.address}}</h2>
+                        <p>
+                        {% include 'LPT email.html' %}
+                        </p>
+                    </div>
+                </li>
+                <li class="slide brand7">
+                    <a href="#" class="action"><span>Email introduction to the Listing Agent</span></a>
+                    <div class="slide-content" id="div7">
+                        <h2>{{property.address}}</h2>
+                        <p>
+                        {% include 'Introduction email.html' %}
+                        </p>
+                    </div>
+                </li>
+                {% if property.thereis_HOA  %}
+                <li class="slide brand8">
+                    <a href="#" class="action"><span>Email to buyer regarding HOA</span></a>
+                    <div class="slide-content" id="div8">
+                        <h2>{{property.address}}</h2>
+                        <p>
+                        {% include 'BuyerHOA.html' %}
+                        </p>
+                    </div>
+                </li>
+                {% endif %}
+                <li class="slide brand9">
+                    <a href="#" class="action"><span>Email to the inspection team</span></a>
+                    <div class="slide-content" id="div9">
+                        <h2>{{property.address}}</h2>
+                        <p>
+                        {% include 'Inspection email buyer.html' %}
+                        </p>
+                    </div>
+                </li>
+
+            </ul>
+
+                {% else %}
+                <ul class="slides">
+                <li class="slide active brand1">
+                    <a href="#" class="action"><span>Congratulations</span></a>
+                    <div class="slide-content" id="div1">
+                        <h2>{{property.address}}</h2>
+                        <!--<img src="{% static 'img/ocma9h6nmo3c1.webp' %}">-->
+                        {% include 'congratulations.html' %}
+                    </div>
+                </li>
+                <li class="slide brand2">
+                    <a href="#" class="action"><span>TC E mail</span></a>
+                    <div class="slide-content" id="div2">
+                        <h2>{{property.address}}</h2>
+                        <p>
+                        {% include 'TCemail.html' %}
+                        </p>
+                    </div>
+                </li>
+                <li class="slide brand3">
+                    <a href="#" class="action"><span>Email to lender </span></a>
+                    <div class="slide-content" id="div3">
+                        <h2>{{property.address}}</h2>
+                        <p>
+                        {% include 'Lender email.html' %}
+                        </p>
+                    </div>
+                </li>
+                <li class="slide brand4">
+                    <a href="#" class="action"><span>Email to title</span></a>
+                    <div class="slide-content" id="div4">
+                        <h2>{{property.address}}</h2>
+                        <p>
+                        {% include 'Title email buyer.html' %}.
+                        </p>
+                    </div>
+                </li>
+
+                <li class="slide brand6">
+                    <a href="#" class="action"><span>LPT email</span></a>
+                    <div class="slide-content" id="div6">
+                        <h2>{{property.address}}</h2>
+                        <p>
+                        {% include 'LPT email.html' %}
+                        </p>
+                    </div>
+                </li>
+                <li class="slide brand7">
+                    <a href="#" class="action"><span>Email introduction to the Listing Agent</span></a>
+                    <div class="slide-content" id="div7">
+                        <h2>{{property.address}}</h2>
+                        <p>
+                        {% include 'Introduction email.html' %}
+                        </p>
+                    </div>
+                </li>
+                {% if property.thereis_HOA %}
+                <li class="slide brand8">
+                    <a href="#" class="action"><span>Email to buyer regarding HOA</span></a>
+                    <div class="slide-content" id="div8">
+                        <h2>{{property.address}}</h2>
+                        <p>
+                        {% include 'BuyerHOA.html' %}
+                        </p>
+                    </div>
+                </li>
+                {% endif %}
+                <li class="slide brand9">
+                    <a href="#" class="action"><span>Email to the inspection team</span></a>
+                    <div class="slide-content" id="div9">
+                        <h2>{{property.address}}</h2>
+                        <p>
+                        {% include 'Inspection email buyer.html' %}
+                        </p>
+                    </div>
+                </li>
+            </ul>
+
+                {% endif %}
+
+            {% endif %}
+            
+        </div>
+    </div>
+
+    <!-- jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src= "https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <!-- funcs javascript -->
+    <script src="{% static 'javascript/7correos.js' %}"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+        $('.floating-menu').on('click', function() {
+            $(this).toggleClass('open');
+        });
+    });
+
+    </script>
+
+<!-- codigo en JS para el menu flotante-->    
+<script>
+  const navigation = document.querySelector('.navigation')
+  ;
+  document.querySelector('.toggle').ondblclick = function(){
+    // on double click = ondblclick
+    this.classList.toggle('active');
+    navigation.classList.toggle('active')
+  }
+</script>
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+<script>
+$( function() {
+  $('.navigation').draggable();
+} );
+</script>
+<!-- fin del codigo para menu flotante-->
+</body>
+</html>

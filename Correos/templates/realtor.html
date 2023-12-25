@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<p>
+	<table style="width: 100%;border-collapse: collapse;">
+		<!-- Headers -->
+		<tr bgcolor="#ADD8E6">
+			<th style="border: 1px solid #ccc; padding: 8px;">Agent</th>
+			<th style="border: 1px solid #ccc; padding: 8px;">Phone Number</th>
+			<th style="border: 1px solid #ccc; padding: 8px;">Email</th>
+			<th style="border: 1px solid #ccc; padding: 8px;">Company</th>
+		</tr>
+		<!-- Rows -->
+		{% for realtor in realtors %}
+		<tr>
+			<td style="border: 1px solid #ccc;padding: 8px;">{{realtor.agent}}</td>
+			<td style="border: 1px solid #ccc;padding: 8px;">{{realtor.phone}}</td>
+			<td style="border: 1px solid #ccc;padding: 8px;">{{realtor.email}}</td>
+			<td style="border: 1px solid #ccc;padding: 8px;">{{realtor.company}}</td>
+		</tr>
+		{% endfor %}
+	</table>
+</p>
+
+{% endblock %}

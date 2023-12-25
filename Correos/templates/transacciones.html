@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<p>
+	<form method="GET">
+		<select name="filtro">
+			<option value="Enviado">Enviado</option>
+			<option value="No Enviado">No Enviado</option>
+			<option value="Todas">Todas</option>
+		</select>
+		<button type="submit">Filtrar</button>
+	</form>
+	<!--<h2>-->
+		<table style="width: 100%;border-collapse: collapse;">
+			<tr bgcolor="#ADD8E6">
+				<th style="border: 1px solid #ccc; padding: 8px;">Address</th>
+				<th style="border: 1px solid #ccc; padding: 8px;">Buyer First Name</th>
+				<th style="border: 1px solid #ccc; padding: 8px;">Buyer Last Name</th>
+
+				<th style="border: 1px solid #ccc; padding: 8px;">Title Company</th>
+
+				<th style="border: 1px solid #ccc; padding: 8px;">Price</th>
+				<th style="border: 1px solid #ccc; padding: 8px;">Escrow Amount</th>
+				<th style="border: 1px solid #ccc; padding: 8px;">Efective Date</th>
+				<th style="border: 1px solid #ccc; padding: 8px;">Escrow Date</th>
+				<th style="border: 1px solid #ccc; padding: 8px;">Inspection Team</th>
+
+
+			</tr>
+			{% for property in properties %}
+			{% if property.emailsend is False %}
+			<tr>
+				<td style="border: 1px solid #ccc; padding: 8px;">
+					<a href="{% url 'detalles' property.id %}">
+						{{property.address}}
+					</a>
+				</td>
+				<td style="border: 1px solid #ccc; padding: 8px;">{{property.buyer_firstname}}</td>
+				<td style="border: 1px solid #ccc; padding: 8px;">{{property.buyer_lastname}}</td>
+
+				<td style="border: 1px solid #ccc; padding: 8px;">{{property.titlecompany}}</td>
+
+				<td style="border: 1px solid #ccc; padding: 8px;">{{property.price}}</td>
+				<td style="border: 1px solid #ccc; padding: 8px;">{{property.escrow_amount}}</td>
+				<td style="border: 1px solid #ccc; padding: 8px;">{{property.efective}}</td>
+				<td style="border: 1px solid #ccc; padding: 8px;">{{property.escrow_date}}</td>
+				<td style="border: 1px solid #ccc; padding: 8px;">{{property.inspectionteam}}</td>
+			</tr>
+			{% else %}
+			<tr bgcolor="#59FFD2">
+				<td style="border: 1px solid #ccc; padding: 8px;">
+					<a href="{% url 'detalles' property.id %}">
+						{{property.address}}
+					</a>
+				</td>
+				<td style="border: 1px solid #ccc; padding: 8px;">{{property.buyer_firstname}}</td>
+				<td style="border: 1px solid #ccc; padding: 8px;">{{property.buyer_lastname}}</td>
+
+				<td style="border: 1px solid #ccc; padding: 8px;">{{property.titlecompany}}</td>
+
+				<td style="border: 1px solid #ccc; padding: 8px;">{{property.price}}</td>
+				<td style="border: 1px solid #ccc; padding: 8px;">{{property.escrow_amount}}</td>
+				<td style="border: 1px solid #ccc; padding: 8px;">{{property.efective_date}}</td>
+				<td style="border: 1px solid #ccc; padding: 8px;">{{property.escrow_date}}</td>
+				<td style="border: 1px solid #ccc; padding: 8px;">{{property.inspectionteam}}</td>
+			{% endif %}
+			{% endfor %}
+			</tr>
+		</table>
+	<!--</h2>-->
+</p>
+{% endblock %}

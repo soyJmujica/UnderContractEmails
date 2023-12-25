@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Aqui van los under contract </h1>
+<h2>
+	{{error}}
+</h2>
+<form action="{% url 'under contract' %}" method="POST" enctype='multipart/form-data'>
+	{% csrf_token %}
+	<div class="form-group">
+	{{form.as_p}}
+	</div>
+
+	<button class="btn btn-primary">
+		save
+	</button>
+   
+</form>
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+    $(document).ready(function() {
+      // Hide the conditional fields initially
+      $('#id_HOA, #id_HOA_phone, #id_HOA_email').hide();
+
+      // Show/hide fields based on the selected option
+      $('#id_thereis_HOA').change(function() {
+        var selectedOption = $(this).prop('checked');
+
+        if (selectedOption) {
+          $('#id_HOA, #id_HOA_phone, #id_HOA_email').show();
+        } else {
+          $('#id_HOA, #id_HOA_phone, #id_HOA_email').hide();
+        }
+      });
+    });
+    </script>
+{% endblock %}

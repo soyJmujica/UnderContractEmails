@@ -1,0 +1,121 @@
+{% load static %}
+<p>
+	
+<strong>Hi there!</strong>
+We would like to introduce ourselves.   We are the Transaction Coordinators for The Military Veteran Team (FYI: We are multilingual in Spanish, Italian, Tagalog, & Portuguese.) Moving forward we will be your right-hand concierge service and will communicate with all parties as a team to ensure the many steps associated with your transaction and closing will be handled in a smooth and expeditious fashion.  
+A key element to the closing process is meeting several contracted deadlines. The information listed below outlines the important dates that coincide with the contractual terms and obligations of the contract.  I have also CC'd several people who will help us with our closing.  
+Let's get started! 
+<br>
+<br>
+<strong>Critical Dates:</strong>
+<ul>
+	<li>
+		{{property.efective}} - Effective Date
+	</li>
+	<li>
+		{{property.escrow_date}} - Earnest Money Due
+	</li>
+	<li>
+		{{property.HOA_date}} - HOA/Condo Application Due
+	</li>
+	<li>
+		{{property.inspection_date}} - Inspection Period Expiration Date
+	</li>
+	<li>
+		{{property.commitment}} - Title Commitment Due
+	</li>
+	<li>
+		(ASAP)   - HOA  Approval Due 
+	</li>
+	<li>
+		{{property.closing}} - Closing Date
+	</li>
+</ul>
+
+
+<br>
+<br>
+<strong>Contact Info:</strong>
+<br>
+<br>
+<ul>
+	<li>
+		Closing Title Company Contact:
+		<ul>
+			{% if property.titlecompany %}
+			<li>
+				{{property.titlecompany}}
+			</li>
+			{% endif %}
+			{% if property.titleagent %}
+			<li>
+				{{property.titleagent}}
+			</li>
+			{% endif %}
+			<li>
+				{{property.titlecompany_address}}”
+			</li>
+			<li>
+				{{property.titlecompany_phone}}
+			</li>
+			<li>
+				{{property.titlecompany_email}}
+			</li>
+			<li>
+				<figure><img src="{{property.screenshot.url}}" width="100%"></figure>
+			</li>
+		</ul>
+	</li>
+	<li>
+		Insurance: (if applicable):
+		<ul>
+			<li>
+				Harbor Insurance Group
+			</li>
+			<li>
+				Amy Gaubert / Larry Sacco
+			</li>
+			<li>
+				amyg@harborins.net / lsacco@harborins.net/ shalloran@harborins.net
+			</li>
+			<li>
+				727-528-2240
+			</li>
+			<li>
+				810 63rd Ave N, St. Petersburg, FL 33702, United States
+			</li>
+		</ul>
+	</li>
+	<li>
+    {% if property.HOA != None %}
+    HOA:
+    <ul>
+        <li>{{ property.HOA }}</li>
+        <li>{{ property.HOA_phone }}</li>
+        <li>{{ property.HOA_email }}</li>
+    </ul>
+    {% endif %}
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+<br>
+<br>
+
+
+<strong>Please let us know if there's anything you need at this time! Be assured that you will hear from us regarding any information that is needed to satisfy a deadline and/or specific requirement. We will be available to answer any questions that you may have throughout the entire closing process. 
+We look forward to working with you!
+Thank you! 
+Please be sure to "reply to all."
+Office hours are Monday-Friday 9am-5pm.</strong>
+<br>
+<img src="{% static 'img/banner.png' %}" width="350px">
+
+</p>

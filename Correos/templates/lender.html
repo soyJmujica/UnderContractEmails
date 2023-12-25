@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<p>
+	<table style="width: 100%;border-collapse: collapse;">
+		<!-- Headers -->
+		<tr bgcolor="#ADD8E6">
+			<th style="border: 1px solid #ccc; padding: 8px;">Lender</th>
+			<th style="border: 1px solid #ccc; padding: 8px;">Phone</th>
+			<th style="border: 1px solid #ccc; padding: 8px;">Email</th>
+			<th style="border: 1px solid #ccc; padding: 8px;">Lender NMLS#</th>
+			<th style="border: 1px solid #ccc; padding: 8px;">Company</th>
+			<th style="border: 1px solid #ccc; padding: 8px;">Company NMLS#</th>
+		</tr>
+
+		<!-- Table Data -->
+		{% for lender in Lenders %}
+		<tr>
+			<td style="border: 1px solid #ccc; padding: 8px;">{{lender.lender}}</td>
+			<td style="border: 1px solid #ccc; padding: 8px;">{{lender.phone}}</td>
+			<td style="border: 1px solid #ccc; padding: 8px;">{{lender.email}}</td>
+			<td style="border: 1px solid #ccc; padding: 8px;">{{lender.lender_nmls}}</td>
+			<td style="border: 1px solid #ccc; padding: 8px;">{{lender.company}}</td>
+			<td style="border: 1px solid #ccc; padding: 8px;">{{lender.company_nmls}}</td>
+		</tr>
+		{% endfor %}
+
+	</table>
+</p>
+
+{% endblock %}

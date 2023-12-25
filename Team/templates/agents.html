@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<!--figure><img src="https://preview.redd.it/hgo8d89q6n7c1.jpeg?width=640&crop=smart&auto=webp&s=77e66adc2ad36f562fed2e23d5363cbd2f845775"></figure--> 
+<table style="width: 100%;border-collapse: separate;">
+	<!-- Headers -->
+	<tr bgcolor="#00CDCD">
+		<th style="border: 1px solid #ccc; padding: 8px;">First Name</th>
+		<th style="border: 1px solid #ccc; padding: 8px;">Last Name</th>
+		<th style="border: 1px solid #ccc; padding: 8px;">Phone Number</th>
+		<th style="border: 1px solid #ccc; padding: 8px;">Email</th>
+		<th style="border: 1px solid #ccc; padding: 8px;">Pending Deals</th>
+		<th style="border: 1px solid #ccc; padding: 8px;">Closed Deals</th>
+	</tr>
+	<!-- Table Data -->
+	{% for agent in agents %}
+	<tr>
+		<td style="border: 1px solid #ccc; padding: 8px;">{{agent.first_name}}</td>
+		<td style="border: 1px solid #ccc; padding: 8px;">{{agent.last_name}}</td>
+		<td style="border: 1px solid #ccc; padding: 8px;">{{agent.phone}}</td>
+		<td style="border: 1px solid #ccc; padding: 8px;">{{agent.email}}</td>
+		<td style="border: 1px solid #ccc; padding: 8px;">{{agent.pending}}</td>
+		<td style="border: 1px solid #ccc; padding: 8px;">{{agent.closed}}</td>
+	</tr>
+	{% endfor %}
+	
+</table>
+{% endblock %}

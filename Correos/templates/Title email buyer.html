@@ -1,0 +1,50 @@
+{% load static %}
+<h2>Hi Title,</h2>
+<p>
+Here is the buyers contact information:
+<ul>
+	<li>
+	Names: {{property.buyer_firstname}} {{property.buyer_lastname}}	
+	</li>
+	<li>
+	emails: {{property.buyer_email}}	
+	</li>
+	<li>
+	phones: {{ property.buyer_phone}}
+	</li>
+</ul>
+
+<br>
+
+
+Here is the buyer's agent commission breakdown:
+<br>
+<ul>
+	<li>Commission: {{property.commission}}%</li>
+	<li>MLS Fee: {{property.mls_fee}}</li>
+	<li>Broker Fee: $195.00 The broker fee is to be charged to the buyers on their closing costs.</li>
+</ul>
+<br>
+{% if property.financing == 'Cash' %}
+<br>
+{% else %}
+Here is the lender's contact information:
+<ul>
+<li>{{property.lender}}</li>
+<li>{{property.lender_email}}</li>
+<li>{{property.lender_phone}}</li>
+</ul>
+{% endif %}
+The Broker Sheet is attached for your review.
+<br>
+Thank you!
+<br>
+<strong>
+Please make sure to include admin@militaryvetteam.com in all email communication.
+Very Respectfully,
+Military Veteran Team Closing Concierge
+WEBSITE: www.isellfl.me/
+"Where Military Discipline & Experience Meet" </strong>
+<br>
+<img src="{% static 'img/banner.png' %}" width="350px">
+</p>
