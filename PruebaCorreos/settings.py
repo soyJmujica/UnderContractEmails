@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-#SECRET_KEY = "django-insecure-39d7h1fpwo8n9z&f+27u&^r#+#-np$ffg&y)aw)zw!v0qvr-41"
+
 SECRET_KEY = os.environ.get('SECRET_KEY', default='your secret key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -33,7 +33,6 @@ RENDER_EXTERNAL_HOSTNAME = os.environ.get('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
     ALLOWED_HOSTS.append(RENDER_EXTERNAL_HOSTNAME)
 
-EMAIL_PASSWORD = 'qlsw ddww vtwu nsyf '
 
 # Application definition
 
@@ -168,7 +167,7 @@ from decouple import config
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'master1495@gmail.com'
-EMAIL_HOST_PASSWORD = EMAIL_PASSWORD
+EMAIL_HOST_PASSWORD = 'EMAIL_PASSWORD'
 EMAIL_USE_TLS = True
 
 '''if DEBUG:
