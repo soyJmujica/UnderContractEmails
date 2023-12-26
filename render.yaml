@@ -1,14 +1,14 @@
 databases:
-  - name: mysite
-    databaseName: mysite
-    user: mysite
+  - name: Correos_db
+    databaseName: Correos_db
+    user: correos_db_user
 
 services:
   - type: web
-    name: mysite
+    name: PruebaCorreos
     runtime: python
     buildCommand: "./build.sh"
-    startCommand: "gunicorn mysite.wsgi:application"
+    startCommand: "gunicorn PruebaCorreos.wsgi:application"
     envVars:
       - key: DATABASE_URL
         fromDatabase:

@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "djmoney", "naomi",
+    "djmoney", "naomi", 'render.apps.RenderConfig'
     #Mias
     "Correos",
     "Team"
@@ -84,12 +84,10 @@ WSGI_APPLICATION = "PruebaCorreos.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-
-
 DATABASES = {
     'default': dj_database_url.config(
         # Feel free to alter this value to suit your needs.
-        default='postgresql://postgres:postgres@localhost:5432/mysite',
+        default='postgres://correos_db_user:9rkUCAIzoZlCGHEqSLFHw9doa0FE8f6Z@dpg-cm525g0cmk4c73cmuv3g-a/correos_db',
         conn_max_age=600
     )
 }
