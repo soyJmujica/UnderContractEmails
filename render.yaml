@@ -8,7 +8,7 @@ services:
     name: PruebaCorreos
     runtime: python
     buildCommand: "./build.sh"
-    startCommand: "gunicorn PruebaCorreos.wsgi"
+    startCommand: "gunicorn PruebaCorreos.wsgi:application"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
