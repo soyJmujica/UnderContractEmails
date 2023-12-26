@@ -88,7 +88,7 @@ WSGI_APPLICATION = "PruebaCorreos.wsgi.application"
 DATABASES = {
     'default': dj_database_url.config(
         # Feel free to alter this value to suit your needs.
-        default='postgres://correos_db_user:9rkUCAIzoZlCGHEqSLFHw9doa0FE8f6Z@dpg-cm525g0cmk4c73cmuv3g-a/correos_db',
+        default='postgres://correos_db_user:9rkUCAIzoZlCGHEqSLFHw9doa0FE8f6Z@dpg-cm525g0cmk4c73cmuv3g-a.oregon-postgres.render.com/correos_db',
         conn_max_age=600
     )
 }
