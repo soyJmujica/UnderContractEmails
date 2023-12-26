@@ -3,7 +3,7 @@
 
 set -o errexit
 
-poetry install
+pip install -r requirements.txt
 poetry add gunicorn
 poetry add django
 poetry add dj-database-url psycopg2-binary
