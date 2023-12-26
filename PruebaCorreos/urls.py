@@ -34,5 +34,5 @@ urlpatterns = [
     path("undercontract/transactions/<int:property_id>/mails/send", views.emailsend, name = 'enviado'),
     path("agents/new/", TeamViews.AddAgent, name = "agregar"),
     path("agents/", TeamViews.Agents, name = "agentes")
-    ] + static(settings.MEDIA_URL,
+    ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) + static(settings.MEDIA_URL,
     document_root=settings.MEDIA_ROOT)
