@@ -156,7 +156,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # settings.py
 DATE_INPUT_FORMATS = ['%d-%m-%Y', '%Y-%m-%d', '%m/%d/%Y','%d/%m/%Y']
 
-from decouple import config
+#from decouple import config
 
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
