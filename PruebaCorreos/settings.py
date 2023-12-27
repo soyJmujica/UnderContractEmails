@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "djmoney", "naomi",'Correos.apps.RenderConfig',
+    "djmoney", "naomi",'Correos.apps.CorreosConfig',
     'Team.apps.RenderConfig',
     #Mias
     "Correos",
