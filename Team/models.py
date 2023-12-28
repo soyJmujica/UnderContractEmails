@@ -2,7 +2,6 @@ from django.db import models
 from django.db.models import Count
 from djmoney.models.fields import MoneyField
 from datetime import timedelta
-#from Correos.models import UnderContractBuyer
 from django.db.models.signals import post_save
 from django.db.models import signals
 from django.dispatch import receiver
